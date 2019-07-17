@@ -10,6 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString * const kProvider_PopAlert;
+extern NSString * const KAction_popAlertControllerWithParams;
+
 @interface Provider_PopAlert : NSObject
 
 - (id)popAlertControllerWithParams:(NSDictionary *)params;

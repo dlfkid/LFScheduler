@@ -10,6 +10,9 @@
 
 #import <UIKit/UIKit.h>
 
+NSString * const kProvider_PopAlert = @"Provider_PopAlert";
+NSString * const KAction_popAlertControllerWithParams = @"popAlertControllerWithParams";
+
 @implementation Provider_PopAlert
 
 - (id)popAlertControllerWithParams:(NSDictionary *)params {

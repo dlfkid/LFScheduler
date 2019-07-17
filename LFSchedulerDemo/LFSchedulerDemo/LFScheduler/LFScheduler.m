@@ -10,7 +10,7 @@
 
 @interface LFScheduler()
 
-@property (nonatomic, strong) NSMutableDictionary *cachedProvider;
+@property (nonatomic, strong) NSMutableDictionary *cachedProviders;
 
 @end
 
@@ -31,7 +31,7 @@ static LFScheduler *_sharedMidDispatcher = nil;
 - (id)invokeWithProviderClass:(NSString *)providerName Action:(NSString *)actionName Params:(NSDictionary *)params CacheProvider:(BOOL)shouldCacheTarget {
     // generate target
     NSString *providerClassString = [NSString stringWithFormat:@"%@", providerName];
-    NSObject *targetProvider = self.cachedProvider[providerClassString];
+    NSObject *targetProvider = self.cachedProviders[providerClassString];
     if (targetProvider == nil) {
         Class targetClass = NSClassFromString(providerClassString);
         targetProvider = [[targetClass alloc] init];
@@ -48,7 +48,7 @@ static LFScheduler *_sharedMidDispatcher = nil;
     }
     
     if (shouldCacheTarget) {
-        self.cachedProvider[providerClassString] = targetProvider;
+        self.cachedProviders[providerClassString] = targetProvider;
     }
     
     if ([targetProvider respondsToSelector:action]) {
@@ -62,7 +62,7 @@ static LFScheduler *_sharedMidDispatcher = nil;
         } else {
             // 这里也是处理无响应请求的地方，在notFound都没有的时候，这个demo是直接return了。实际开发过程中，可以用前面提到的固定的target顶上的。
             [self NoTargetActionResponseWithProviderName:providerClassString selectorString:actionString originParams:params];
-            [self.cachedProvider removeObjectForKey:providerClassString];
+            [self.cachedProviders removeObjectForKey:providerClassString];
             return nil;
         }
     }
@@ -96,7 +96,7 @@ static LFScheduler *_sharedMidDispatcher = nil;
 
 - (void)releaseCachedProviderClass:(NSString *)providerName {
     NSString *providerClassString = [NSString stringWithFormat:@"%@", providerName];
-    [self.cachedProvider removeObjectForKey:providerClassString];
+    [self.cachedProviders removeObjectForKey:providerClassString];
 }
 
 #pragma mark - private methods
@@ -173,10 +173,10 @@ static LFScheduler *_sharedMidDispatcher = nil;
 
 #pragma mark - LazyLoads
 - (NSMutableDictionary *)cachedProviders {
-    if (_cachedProvider == nil) {
-        _cachedProvider = [[NSMutableDictionary alloc] init];
+    if (_cachedProviders == nil) {
+        _cachedProviders = [[NSMutableDictionary alloc] init];
     }
-    return _cachedProvider;
+    return _cachedProviders;
 }
 
 @end

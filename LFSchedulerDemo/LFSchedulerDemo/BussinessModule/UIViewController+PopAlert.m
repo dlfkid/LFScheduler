@@ -9,6 +9,7 @@
 #import "UIViewController+PopAlert.h"
 
 #import "LFScheduler.h"
+#import "Provider_PopAlert.h"
 
 @implementation UIViewController (PopAlert)
 
@@ -16,7 +17,7 @@
     dispatch_block_t handlerLeft = leftHandler ? leftHandler : ^{};
     dispatch_block_t handlerRight = rightHandler ? rightHandler : ^{};
     NSDictionary *params = @{@"Title": title, @"Msg": message, @"LBT": leftTitle, @"LBH": handlerLeft, @"RBT": rightTitle, @"RBH": handlerRight};
-    return [[LFScheduler sharedScheduler] invokeWithProviderClass:@"Provider_PopAlert" Action:@"popAlertControllerWithParams" Params:params CacheProvider:YES];
+    return [[LFScheduler sharedScheduler] invokeWithProviderClass:kProvider_PopAlert Action:KAction_popAlertControllerWithParams Params:params CacheProvider:YES];
 }
 
 @end
