@@ -19,14 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(popAlertController)];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)popAlertController {
     UIAlertController *alertController = [self popAlertControllerWithTitle:@"AlertTitle" Message:@"Alert Message" LeftButtonTitle:@"Cancel" LeftButtonHandler:nil RightButtonTitle:@"OK" RightButtonHandler:^{
         NSLog(@"OK Button Pressed");
     }];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 @end
