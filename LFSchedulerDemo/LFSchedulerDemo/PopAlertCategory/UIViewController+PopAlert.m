@@ -9,7 +9,7 @@
 #import "UIViewController+PopAlert.h"
 
 #import "LFScheduler.h"
-#import "SchedulerInterfaceList.h"
+#import "PopAlertHeader.h"
 
 @implementation UIViewController (PopAlert)
 

@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3547B87C22E2DA2C00F55BC8 /* SchedulerInterfaceList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SchedulerInterfaceList.h; sourceTree = "<group>"; };
+		3547B87C22E2DA2C00F55BC8 /* PopAlertHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopAlertHeader.h; sourceTree = "<group>"; };
 		357FAD1F22D6CA8B005130FB /* LFScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFScheduler.h; sourceTree = "<group>"; };
 		357FAD2322D6CA8B005130FB /* LFScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFScheduler.m; sourceTree = "<group>"; };
 		357FAD2622D6E5DC005130FB /* UIViewController+PopAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PopAlert.h"; sourceTree = "<group>"; };
@@ -56,23 +56,23 @@
 			path = LFScheduler;
 			sourceTree = "<group>";
 		};
-		357FAD2C22D70626005130FB /* CommonMethodModule */ = {
+		357FAD2C22D70626005130FB /* PopAlert */ = {
 			isa = PBXGroup;
 			children = (
-				3547B87C22E2DA2C00F55BC8 /* SchedulerInterfaceList.h */,
+				3547B87C22E2DA2C00F55BC8 /* PopAlertHeader.h */,
 				357FAD2922D6E701005130FB /* Provider_PopAlert.h */,
 				357FAD2A22D6E701005130FB /* Provider_PopAlert.m */,
 			);
-			path = CommonMethodModule;
+			path = PopAlert;
 			sourceTree = "<group>";
 		};
-		357FAD2D22D70635005130FB /* BussinessModule */ = {
+		357FAD2D22D70635005130FB /* PopAlertCategory */ = {
 			isa = PBXGroup;
 			children = (
 				357FAD2622D6E5DC005130FB /* UIViewController+PopAlert.h */,
 				357FAD2722D6E5DC005130FB /* UIViewController+PopAlert.m */,
 			);
-			path = BussinessModule;
+			path = PopAlertCategory;
 			sourceTree = "<group>";
 		};
 		35C9D38822D6C60800C3DEE0 = {
@@ -98,8 +98,8 @@
 				35C9D39522D6C60800C3DEE0 /* AppDelegate.m */,
 				35C9D39722D6C60800C3DEE0 /* ViewController.h */,
 				35C9D39822D6C60800C3DEE0 /* ViewController.m */,
-				357FAD2D22D70635005130FB /* BussinessModule */,
-				357FAD2C22D70626005130FB /* CommonMethodModule */,
+				357FAD2D22D70635005130FB /* PopAlertCategory */,
+				357FAD2C22D70626005130FB /* PopAlert */,
 				357FAD1E22D6CA8B005130FB /* LFScheduler */,
 				35C9D39D22D6C60A00C3DEE0 /* Assets.xcassets */,
 				35C9D39F22D6C60A00C3DEE0 /* LaunchScreen.storyboard */,
